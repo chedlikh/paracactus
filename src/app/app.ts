@@ -3,11 +3,8 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { Navbar } from './components/navbar/navbar';
-import { Carousel } from './components/carousel/carousel';
-import { ProductSection} from './components/product-section/product-section';
-import { CategorySection } from './components/category-section/category-section';
+
 import { Footer } from './components/footer/footer';
-import { Panier } from './components/panier/panier';
 
 import { Product, Slide, Category } from './models/models';
 
@@ -18,11 +15,8 @@ import { Product, Slide, Category } from './models/models';
     CommonModule,
     RouterOutlet,
     Navbar,
-    Carousel,
-    ProductSection,
-    CategorySection,
+  
     Footer,
-    Panier
 ],
   templateUrl: './app.html',
   styleUrl: './app.scss'

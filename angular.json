@@ -21,7 +21,7 @@
             "polyfills": [
               "zone.js"
             ],
-            "outputPath": "dist/parapharmacie/browser",
+           
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
