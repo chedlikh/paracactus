@@ -1,96 +1,57 @@
-<!-- footer.component.html -->
-<footer class="gradient-bg text-white mt-20 py-16 relative overflow-hidden">
-  <!-- Cactus décoratifs dans le footer -->
-  <div class="absolute inset-0 opacity-5 pointer-events-none">
-    <div class="text-9xl absolute top-10 left-10 animate-float">🌵</div>
-    <div class="text-9xl absolute bottom-20 right-20 animate-float" style="animation-delay: 3s">🌵</div>
-  </div>
-
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <div class="grid md:grid-cols-4 gap-12 mb-12">
-      <!-- Colonne 1 - Logo & Description -->
-      <div>
-        <div class="flex items-center gap-4 mb-6">
-          <span class="text-7xl animate-float">🌵</span>
+<footer class="gradient-bg text-white py-12 sm:py-16 relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12 mb-12">
+      <!-- Logo + Description -->
+      <div class="text-center sm:text-left">
+        <div class="flex items-center justify-center sm:justify-start gap-4 mb-6">
+          <span class="text-6xl sm:text-7xl animate-float">🌵</span>
           <div>
-            <div class="text-4xl font-bold">Paracactus</div>
+            <div class="text-3xl sm:text-4xl font-bold">Paracactus</div>
             <div class="text-sm opacity-90">Votre bien-être naturel</div>
           </div>
         </div>
-        <p class="text-emerald-50 mb-8 leading-relaxed">
-          Votre parapharmacie en ligne de confiance depuis 2020. 
-          Plus de 50 000 clients satisfaits en Tunisie.
+        <p class="text-emerald-50 text-sm sm:text-base leading-relaxed">
+          Votre parapharmacie en ligne de confiance depuis 2020. Plus de 50 000 clients satisfaits.
         </p>
-        <div class="flex gap-4">
-          <a href="#" class="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all hover:scale-110 backdrop-blur">
-            <i class="fab fa-facebook-f text-xl"></i>
-          </a>
-          <a href="#" class="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all hover:scale-110 backdrop-blur">
-            <i class="fab fa-instagram text-xl"></i>
-          </a>
-          <a href="#" class="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all hover:scale-110 backdrop-blur">
-            <i class="fab fa-tiktok text-xl"></i>
-          </a>
-          <a href="#" class="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all hover:scale-110 backdrop-blur">
-            <i class="fab fa-youtube text-xl"></i>
-          </a>
+        <div class="flex justify-center sm:justify-start gap-4 mt-6">
+          <a href="#" class="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all hover:scale-110"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all hover:scale-110"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all hover:scale-110"><i class="fab fa-tiktok"></i></a>
+          <a href="#" class="w-12 h-12 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-all hover:scale-110"><i class="fab fa-youtube"></i></a>
         </div>
       </div>
 
-      <!-- Informations -->
-      <div>
-        <h4 class="font-bold text-xl mb-6 flex items-center gap-3">
-          <i class="fas fa-info-circle"></i> Informations
-        </h4>
-        <ul class="space-y-4 text-emerald-50">
-          <li><a href="#" class="hover:text-white hover:translate-x-2 inline-block transition-all">À propos de nous</a></li>
-          <li><a href="#" class="hover:text-white hover:translate-x-2 inline-block transition-all">Nos magasins</a></li>
-          <li><a href="#" class="hover:text-white hover:translate-x-2 inline-block transition-all">Blog & Conseils</a></li>
-          <li><a href="#" class="hover:text-white hover:translate-x-2 inline-block transition-all">Contact</a></li>
-          <li><a href="#" class="hover:text-white hover:translate-x-2 inline-block transition-all">Carrières</a></li>
+      <!-- Autres colonnes (empilées sur mobile) -->
+      <div class="text-center sm:text-left">
+        <h4 class="font-bold text-lg sm:text-xl mb-4">Informations</h4>
+        <ul class="space-y-3 text-emerald-50 text-sm">
+          <li><a href="#" class="hover:text-white transition">À propos</a></li>
+          <li><a href="#" class="hover:text-white transition">Blog</a></li>
+          <li><a href="#" class="hover:text-white transition">Contact</a></li>
         </ul>
       </div>
 
-      <!-- Service Client -->
-      <div>
-        <h4 class="font-bold text-xl mb-6 flex items-center gap-3">
-          <i class="fas fa-headset"></i> Service Client
-        </h4>
-        <ul class="space-y-4 text-emerald-50">
-          <li><a href="#" class="hover:text-white hover:translate-x-2 inline-block transition-all">FAQ & Aide</a></li>
-          <li><a href="#" class="hover:text-white hover:translate-x-2 inline-block transition-all">Livraison & Retours</a></li>
-          <li><a href="#" class="hover:text-white hover:translate-x-2 inline-block transition-all">Paiement Sécurisé</a></li>
-          <li><a href="#" class="hover:text-white hover:translate-x-2 inline-block transition-all">Programme Fidélité</a></li>
-          <li><a href="#" class="hover:text-white hover:translate-x-2 inline-block transition-all">Conditions Générales</a></li>
+      <div class="text-center sm:text-left">
+        <h4 class="font-bold text-lg sm:text-xl mb-4">Service Client</h4>
+        <ul class="space-y-3 text-emerald-50 text-sm">
+          <li><a href="#" class="hover:text-white transition">Livraison</a></li>
+          <li><a href="#" class="hover:text-white transition">FAQ</a></li>
+          <li><a href="#" class="hover:text-white transition">Retours</a></li>
         </ul>
       </div>
 
-      <!-- Newsletter -->
-      <div>
-        <h4 class="font-bold text-xl mb-6 flex items-center gap-3">
-          <i class="fas fa-envelope-open-heart"></i> Newsletter
-        </h4>
-        <p class="text-emerald-50 mb-6">Recevez nos offres exclusives & conseils bien-être</p>
-        <div class="flex flex-col gap-3">
-          <input 
-            type="email" 
-            placeholder="Votre email" 
-            class="px-6 py-4 rounded-full bg-white/20 border border-white/30 placeholder-emerald-200 focus:bg-white/30 focus:outline-none transition-all">
-          <button class="px-8 py-4 bg-white text-emerald-600 rounded-full font-bold hover:shadow-2xl transition-all hover:scale-105 btn-glow flex items-center justify-center gap-3">
-            <i class="fas fa-paper-plane"></i> S'inscrire
-          </button>
-        </div>
-        <div class="mt-6 text-xs text-emerald-100">
-          <i class="fas fa-check-circle mr-2"></i> -10% sur votre première commande
-        </div>
+      <div class="text-center sm:text-left">
+        <h4 class="font-bold text-lg sm:text-xl mb-4">Newsletter</h4>
+        <p class="text-emerald-50 text-sm mb-4">Offres exclusives chaque semaine</p>
+        <input type="email" placeholder="Votre email" class="w-full px-4 py-3 rounded-full text-sm mb-3">
+        <button class="w-full px-6 py-3 bg-white text-emerald-600 rounded-full font-bold hover:scale-105 btn-glow text-sm">
+          S'inscrire
+        </button>
       </div>
     </div>
 
-    <div class="border-t border-white/20 pt-8 text-center">
-      <p class="text-emerald-100">
-        © 2025 <span class="font-bold text-white">Paracactus.tn</span> - Tous droits réservés. 
-        Fait avec <span class="text-red-500">♥</span> en Tunisie
-      </p>
+    <div class="text-center text-emerald-100 text-sm pt-8 border-t border-white/20">
+      © 2025 Paracactus.tn - Fait avec ♥ en Tunisie
     </div>
   </div>
 </footer>

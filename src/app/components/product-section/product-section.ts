@@ -9,15 +9,15 @@ import { Product } from '../../models/models';
   standalone: true,
   imports: [CommonModule, ProductCard],
   template: `
-    <section class="py-16 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 text-center">
-        <h2 class="text-4xl font-bold text-gray-800">{{title}} <span class="text-5xl">🌵</span></h2>
-        <p class="text-xl text-gray-600 mt-3">{{subtitle}}</p>
-      </div>
-      <div class="max-w-7xl mx-auto px-4 mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-        <app-product-card *ngFor="let p of products" [product]="p"></app-product-card>
-      </div>
-    </section>
+    <section class="py-12 sm:py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center mb-12">
+    <h2 class="text-4xl sm:text-5xl font-black text-gradient mb-4">{{title}}</h2>
+    <p class="text-lg sm:text-xl text-gray-600">{{subtitle}}</p>
+  </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <app-product-card *ngFor="let p of products; let i = index" [product]="p" [style.animation-delay.ms]="i * 100"></app-product-card>
+  </div>
+</section>
   `
 })
 export class ProductSection {

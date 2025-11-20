@@ -1,18 +1,17 @@
-<!-- category-section.component.html -->
 <section class="max-w-7xl mx-auto px-6 py-16">
-  <div class="text-center mb-16 animate-slide-in-up">
-    <div class="inline-block bg-gradient-to-r from-purple-100 to-pink-100 px-8 py-3 rounded-full text-purple-700 font-bold text-lg mb-6">
+  <div class="text-center mb-12 animate-slide-in-up">
+    <div class="inline-block bg-gradient-to-r from-purple-100 to-pink-100 px-6 py-3 rounded-full text-purple-700 font-bold text-base sm:text-lg mb-6">
       <i class="fas fa-th-large mr-2"></i> Catégories
     </div>
-    <h2 class="text-5xl md:text-6xl font-black text-gradient mb-4 flex items-center justify-center gap-4">
-      <span class="text-7xl animate-float">🌵</span>
-      Explorez Nos Univers
-      <span class="text-7xl animate-float" style="animation-delay: 0.5s">🌿</span>
+    <h2 class="text-4xl sm:text-5xl md:text-6xl font-black text-gradient mb-4 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <span class="text-6xl sm:text-7xl animate-float">🌵</span>
+      <span>Explorez Nos Univers</span>
+      <span class="text-6xl sm:text-7xl animate-float" style="animation-delay: 0.5s">🌿</span>
     </h2>
-    <p class="text-xl text-gray-600">Plus de 2000 produits naturels sélectionnés avec soin</p>
+    <p class="text-lg sm:text-xl text-gray-600">Plus de 2000 produits naturels sélectionnés avec soin</p>
   </div>
 
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
     <app-category-card 
       *ngFor="let c of categories; let i = index" 
       [category]="c"

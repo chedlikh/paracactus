@@ -1,25 +1,27 @@
-<!-- carousel.component.html -->
-<div class="max-w-7xl mx-auto px-6 py-8">
-  <div class="glass-effect rounded-3xl overflow-hidden shadow-2xl animate-slide-in-up relative">
-    <div class="gradient-hero p-12 md:p-16">
-      <div class="grid md:grid-cols-2 gap-8 items-center">
-        <div class="text-white space-y-6 animate-slide-in-left">
-          <div class="inline-block bg-gradient-to-r from-rose-500 to-pink-500 px-6 py-2 rounded-full text-sm font-bold animate-pulse-glow" *ngIf="slides[current]?.promoBadge">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+  <div class="glass-effect rounded-3xl overflow-hidden shadow-2xl animate-slide-in-up">
+    <div class="gradient-hero p-8 sm:p-12 md:p-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <!-- Texte -->
+        <div class="text-white space-y-4 sm:space-y-6 order-2 md:order-1 animate-slide-in-left">
+          <div *ngIf="slides[current]?.promoBadge" 
+               class="inline-block bg-gradient-to-r from-rose-500 to-pink-500 px-4 sm:px-6 py-2 rounded-full text-sm sm:text-base font-bold animate-pulse-glow">
             {{slides[current]?.promoBadge}}
           </div>
-          <h1 class="text-5xl md:text-6xl font-black leading-tight">
+          <h1 class="text-4xl sm:text-5xl md:text-6xl font-black leading-tight">
             {{slides[current]?.title}}<br>
             <span class="text-yellow-300">{{slides[current]?.subtitle}}</span>
           </h1>
-          <p class="text-xl text-emerald-50 font-light">{{slides[current]?.description}}</p>
-          <div class="flex gap-4">
-            <button class="px-8 py-4 bg-white text-emerald-600 rounded-full font-bold text-lg shadow-2xl hover:scale-105 btn-glow">
-              {{slides[current]?.buttonText}} →
-            </button>
-          </div>
+          <p class="text-lg sm:text-xl text-emerald-50 font-light">{{slides[current]?.description}}</p>
+          <button class="px-6 sm:px-8 py-3 sm:py-4 bg-white text-emerald-600 rounded-full font-bold text-base sm:text-lg shadow-2xl hover:scale-105 btn-glow">
+            {{slides[current]?.buttonText}} →
+          </button>
         </div>
-        <div class="relative animate-slide-in-right">
-          <img [src]="slides[current]?.image" class="w-full h-96 object-cover rounded-3xl shadow-2xl animate-float" alt="Slide">
+        <!-- Image -->
+        <div class="order-1 md:order-2 animate-slide-in-right">
+          <img [src]="slides[current]?.image" 
+               class="w-full h-72 sm:h-96 md:h-full object-cover rounded-3xl shadow-2xl animate-float" 
+               alt="Slide">
         </div>
       </div>
     </div>
