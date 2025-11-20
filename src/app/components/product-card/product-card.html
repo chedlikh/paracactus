@@ -1,0 +1,29 @@
+<!-- product-card.component.html -->
+<div class="glass-effect rounded-3xl overflow-hidden hover-lift card-shine shadow-xl group">
+  <div class="relative">
+    <img [src]="product.image" class="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500" [alt]="product.name">
+    <div *ngIf="product.badge" class="absolute top-4 right-4 bg-gradient-to-r from-rose-500 to-pink-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-xl animate-pulse">
+      {{product.badge}}
+    </div>
+    <button class="absolute top-4 left-4 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center text-rose-500 hover:scale-110 transition shadow-lg">
+      <i class="fas fa-heart"></i>
+    </button>
+  </div>
+  <div class="p-6">
+    <span class="text-emerald-600 text-xs font-bold uppercase tracking-wider">{{product.category}}</span>
+    <h3 class="text-xl font-bold text-gray-800 mt-2 mb-3">{{product.name}}</h3>
+    <div class="flex items-center gap-2 mb-3">
+      <span class="text-yellow-500">{{product.rating}}</span>
+      <span class="text-sm text-gray-600">(124 avis)</span>
+    </div>
+    <div class="flex items-center justify-between mb-4">
+      <div>
+        <span class="text-3xl font-bold text-gradient">{{product.priceCurrent}}</span>
+        <span *ngIf="product.priceOld" class="text-sm text-gray-400 line-through ml-2">{{product.priceOld}}</span>
+      </div>
+    </div>
+    <button class="w-full py-3 bg-gradient-to-r from-emerald-500 to-green-500 text-white rounded-xl font-bold hover:scale-105 btn-glow">
+      <i class="fas fa-cart-plus mr-2"></i> Ajouter au panier
+    </button>
+  </div>
+</div>

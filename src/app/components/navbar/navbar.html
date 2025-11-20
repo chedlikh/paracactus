@@ -1,0 +1,74 @@
+<nav class="glass-effect sticky top-0 z-50 shadow-2xl border-b-2 border-emerald-200 animate-slide-in-up">
+    <div class="gradient-bg py-3 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between text-white text-sm">
+            <div class="flex gap-6">
+                <span class="flex items-center gap-2"><i class="fas fa-phone-alt"></i> +216 71 123 456</span>
+                <span class="flex items-center gap-2"><i class="fas fa-envelope"></i> contact@paracactus.tn</span>
+            </div>
+            <div class="flex items-center gap-2 font-semibold">
+                <i class="fas fa-truck animate-bounce-slow"></i> Livraison GRATUITE dès 99 DT
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <span class="text-6xl animate-float">🌵</span>
+                <div>
+                    <span class="text-3xl font-bold text-gradient">Paracactus</span>
+                    <p class="text-xs text-emerald-600 font-medium">Votre bien-être naturel</p>
+                </div>
+            </a>
+
+            <div class="flex-1 max-w-xl mx-8 relative">
+                <input type="text" placeholder="Rechercher des produits..."
+                    class="w-full py-3 px-6 pr-12 rounded-full border-2 border-emerald-200 focus:border-emerald-400 focus:ring-4 focus:ring-emerald-100 transition-all">
+                <button
+                    class="absolute right-2 top-1/2 -translate-y-1/2 bg-gradient-to-r from-emerald-500 to-green-500 text-white p-3 rounded-full hover:scale-110 transition shadow-lg">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+            <div class="flex items-center gap-6 text-emerald-600">
+                <button class="relative hover:scale-110 transition"><i class="fas fa-user text-2xl"></i></button>
+                <button class="relative hover:scale-110 transition">
+                    <i class="fas fa-heart text-2xl"></i>
+                    <span
+                        class="absolute -top-2 -right-2 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center animate-pulse">3</span>
+                </button>
+                <button [routerLink]="['/panier']" routerLinkActive="ring-4 ring-emerald-300"
+                    class="relative hover:scale-110 transition-all duration-300 group cursor-pointer">
+
+                    <i
+                        class="fas fa-shopping-cart text-2xl text-emerald-600 group-hover:text-emerald-700 transition"></i>
+
+                    <!-- Badge (visible seulement si > 0) -->
+                    <span *ngIf="cartItemCount > 0"
+                        class="absolute -top-3 -right-3 bg-gradient-to-r from-emerald-500 to-green-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center animate-pulse shadow-lg border-2 border-white">
+                        {{ cartItemCount }}
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="border-t border-emerald-100 bg-white/50">
+        <div class="max-w-7xl mx-auto px-6 py-3">
+            <ul class="flex justify-center gap-8 text-sm font-semibold text-emerald-700">
+                <li><a href="#" class="hover:text-emerald-900 flex items-center gap-2 hover:scale-110 transition"><i
+                            class="fas fa-home"></i> Accueil</a></li>
+                <li><a href="#" class="hover:text-emerald-900 flex items-center gap-2 hover:scale-110 transition"><i
+                            class="fas fa-star"></i> Promotions</a></li>
+                <li><a href="#" class="hover:text-emerald-900 flex items-center gap-2 hover:scale-110 transition"><i
+                            class="fas fa-spa"></i> Beauté</a></li>
+                <li><a href="#" class="hover:text-emerald-900 flex items-center gap-2 hover:scale-110 transition"><i
+                            class="fas fa-heartbeat"></i> Santé</a></li>
+                <li><a href="#" class="hover:text-emerald-900 flex items-center gap-2 hover:scale-110 transition"><i
+                            class="fas fa-baby"></i> Bébé & Maman</a></li>
+                <li><a href="#" class="hover:text-emerald-900 flex items-center gap-2 hover:scale-110 transition"><i
+                            class="fas fa-leaf"></i> Bio & Nature</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
