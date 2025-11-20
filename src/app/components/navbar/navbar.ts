@@ -13,6 +13,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class Navbar {
   // Nombre d'articles dans le panier (à connecter à un service plus tard)
   cartItemCount = 2;
+  pItemCount=3;
 
   // Menu mobile (burger)
   mobileMenuOpen = false;

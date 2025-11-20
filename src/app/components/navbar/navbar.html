@@ -47,9 +47,15 @@
       <div class="hidden md:flex items-center gap-6 text-emerald-600">
         <button class="relative hover:scale-110 transition"><i class="fas fa-user text-2xl"></i></button>
         
-        <button class="relative hover:scale-110 transition">
-          <i class="fas fa-heart text-2xl"></i>
-          <span class="absolute -top-3 -right-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center animate-pulse shadow-lg border-2 border-white">3</span>
+        
+        <button [routerLink]="['/products']" 
+                routerLinkActive="ring-4 ring-emerald-300 rounded-full" 
+                class="relative hover:scale-110 transition-all duration-300 group">
+          <i class="fas fa-heart text-2xl text-emerald-600 group-hover:text-emerald-700 transition"></i>
+          <span *ngIf="pItemCount > 0"
+                class="absolute -top-3 -right-3 bg-gradient-to-r from-pink-500 to-rose-500 text-white text-xs font-bold w-6 h-6 rounded-full flex items-center justify-center animate-pulse shadow-lg border-2 border-white">
+            {{ pItemCount }}
+          </span>
         </button>
 
         <!-- PANIER avec lien -->

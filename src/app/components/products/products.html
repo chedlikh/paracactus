@@ -1,0 +1,55 @@
+<div class="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+  <h1 class="text-5xl font-bold text-gradient mb-8 text-center sm:text-left flex items-center justify-center sm:justify-start gap-4">
+    <span class="text-6xl animate-float">🌵</span> Tous les Produits
+  </h1>
+
+  <div class="grid lg:grid-cols-4 gap-8">
+    <!-- FILTRES À GAUCHE -->
+    <aside class="lg:col-span-1">
+      <div class="glass-effect rounded-3xl p-6 sticky top-24 shadow-2xl border-2 border-emerald-200">
+        <h2 class="text-2xl font-bold text-gray-800 mb-6"><i class="fas fa-filter mr-2"></i>Filtres</h2>
+
+        <input type="text" [(ngModel)]="searchTerm" placeholder="Rechercher..." class="w-full mb-6 px-4 py-3 rounded-xl border-2 border-emerald-200 focus:border-emerald-400">
+
+        <div class="mb-6">
+          <label class="block font-bold mb-2">Catégorie</label>
+          <select [(ngModel)]="selectedCategory" class="w-full px-4 py-3 rounded-xl border-2 border-emerald-200">
+            <option value="all">Toutes</option>
+            <option *ngFor="let cat of categories()" [value]="cat">{{cat}}</option>
+          </select>
+        </div>
+
+        <div class="mb-6">
+          <label class="block font-bold mb-2">Prix : {{priceMin()}} - {{priceMax()}} DT</label>
+          <input type="range" min="0" max="100" [(ngModel)]="priceMax" class="w-full">
+        </div>
+
+        <label class="flex items-center gap-3 cursor-pointer">
+          <input type="checkbox" [(ngModel)]="onlyPromo" class="w-5 h-5 text-emerald-600 rounded">
+          <span>En promotion uniquement</span>
+        </label>
+      </div>
+    </aside>
+
+    <!-- LISTE PRODUITS -->
+    <div class="lg:col-span-3">
+      <div class="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
+        <p class="text-gray-600">{{filteredProducts().length}} produits</p>
+        <div class="flex gap-3">
+          <select [(ngModel)]="sortBy" class="px-4 py-2 rounded-xl border-2 border-emerald-200">
+            <option value="price-desc">Prix ↓</option>
+            <option value="price-asc">Prix ↑</option>
+            <option value="name">Nom</option>
+            <option value="rating">Note</option>
+          </select>
+          <button (click)="viewMode.set('grid')" class="p-3 rounded-xl" [class.bg-emerald-100]="viewMode() === 'grid'"><i class="fas fa-th-large"></i></button>
+          <button (click)="viewMode.set('list')" class="p-3 rounded-xl" [class.bg-emerald-100]="viewMode() === 'list'"><i class="fas fa-list"></i></button>
+        </div>
+      </div>
+
+      <div [ngClass]="viewMode() === 'grid' ? 'grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6' : 'space-y-6'">
+        <app-product-card *ngFor="let p of filteredProducts()" [product]="p"></app-product-card>
+      </div>
+    </div>
+  </div>
+</div>
