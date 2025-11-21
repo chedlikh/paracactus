@@ -95,3 +95,47 @@
     @apply fixed opacity-10 pointer-events-none z-0 text-9xl;
   }
 }
+/* === Mobile Optimization === */
+@media (max-width: 768px) {
+  /* Reduce/remove heavy animations on mobile */
+  .glass-effect {
+    backdrop-filter: blur(8px) !important; /* Much lighter blur */
+  }
+  
+  /* Disable gradient animations on mobile */
+  .gradient-bg,
+  .gradient-hero {
+    animation: none !important;
+  }
+  
+  /* Reduce animation intensity */
+  .animate-float {
+    animation: float 8s ease-in-out infinite; /* Slower */
+  }
+  
+  .animate-bounce-slow {
+    animation: bounce-slow 4s ease-in-out infinite; /* Slower */
+  }
+  
+  /* Disable shine effect on cards */
+  .card-shine::after {
+    display: none;
+  }
+}
+
+/* Additional performance optimizations */
+* {
+  /* Improve painting performance */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000;
+}
+
+/* Reduce animation frame rate for better performance */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
