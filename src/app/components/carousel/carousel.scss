@@ -1,0 +1,23 @@
+/* carousel.component.scss */
+:host ::ng-deep app-carousel {
+  display: block;
+  height: 600px;            /* Default height */
+}
+
+@media (min-width: 768px) {
+  :host ::ng-deep app-carousel {
+    height: 680px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :host ::ng-deep app-carousel {
+    height: 720px;
+  }
+}
+
+@media (min-width: 1280px) {
+  :host ::ng-deep app-carousel {
+    height: 780px;
+  }
+}

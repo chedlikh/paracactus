@@ -1,4 +1,4 @@
-/* src/styles.scss – VERSION PARFAITE 2025 (plus aucun warning) */
+/* src/styles.scss – Version SCSS 100% valide 2025 (zéro warning) */
 @use "tailwindcss";
 
 /* === Google Fonts === */
@@ -25,7 +25,7 @@
   }
 }
 
-/* === Animations magnifiques === */
+/* === Animations personnalisées === */
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-20px) rotate(5deg); }
@@ -44,7 +44,7 @@
 .animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
 .animate-bounce-slow { animation: bounce-slow 3s ease-in-out infinite; }
 
-/* === Classes réutilisables === */
+/* === Components réutilisables (maintenant 100% valides avec @layer) === */
 @layer components {
   .gradient-bg {
     @apply bg-gradient-to-r from-emerald-600 via-green-500 to-teal-500 bg-[length:400%_400%] animate-[gradient-shift_15s_ease_infinite];
@@ -95,45 +95,40 @@
     @apply fixed opacity-10 pointer-events-none z-0 text-9xl;
   }
 }
-/* === Mobile Optimization === */
+
+/* === Optimisations mobiles & performances === */
 @media (max-width: 768px) {
-  /* Reduce/remove heavy animations on mobile */
   .glass-effect {
-    backdrop-filter: blur(8px) !important; /* Much lighter blur */
+    backdrop-filter: blur(8px) !important;
   }
-  
-  /* Disable gradient animations on mobile */
+
   .gradient-bg,
   .gradient-hero {
     animation: none !important;
   }
-  
-  /* Reduce animation intensity */
+
   .animate-float {
-    animation: float 8s ease-in-out infinite; /* Slower */
+    animation: float 8s ease-in-out infinite;
   }
-  
+
   .animate-bounce-slow {
-    animation: bounce-slow 4s ease-in-out infinite; /* Slower */
+    animation: bounce-slow 4s ease-in-out infinite;
   }
-  
-  /* Disable shine effect on cards */
+
   .card-shine::after {
     display: none;
   }
 }
 
-/* Additional performance optimizations */
+/* Hardware acceleration & reduced motion */
 * {
-  /* Improve painting performance */
   transform: translateZ(0);
   backface-visibility: hidden;
   perspective: 1000;
 }
 
-/* Reduce animation frame rate for better performance */
 @media (prefers-reduced-motion: reduce) {
-  * {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
